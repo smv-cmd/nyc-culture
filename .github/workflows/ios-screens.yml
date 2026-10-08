@@ -1,0 +1,45 @@
+name: iOS screenshots
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  shots:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Build for simulator
+        working-directory: ios
+        run: |
+          xcodegen generate
+          UDID=$(xcrun simctl list devices available -j | python3 -c "import json,sys;d=json.load(sys.stdin)['devices'];c=[x for k,v in d.items() if 'iOS' in k for x in v if x['name'].startswith('iPhone 16 Pro') or x['name'].startswith('iPhone 16')];print(c[0]['udid'])")
+          echo "UDID=$UDID" >> $GITHUB_ENV
+          xcodebuild -project NYCCulture.xcodeproj -scheme NYCCulture -destination "id=$UDID" -derivedDataPath build CODE_SIGNING_ALLOWED=NO build -quiet
+      - name: Run and capture
+        run: |
+          mkdir -p shots
+          xcrun simctl boot "$UDID" || true
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl status_bar "$UDID" override --time 9:41 --batteryState charged --batteryLevel 100 || true
+          xcrun simctl privacy "$UDID" grant location com.smvcmd.nycculture || true
+          xcrun simctl location "$UDID" set 40.7527,-73.9772 || true
+          xcrun simctl install "$UDID" ios/build/Build/Products/Debug-iphonesimulator/NYCCulture.app
+          for tab in agenda exhibitions map institutions; do
+            xcrun simctl terminate "$UDID" com.smvcmd.nycculture || true
+            xcrun simctl launch "$UDID" com.smvcmd.nycculture -initialTab $tab
+            sleep 12
+            xcrun simctl io "$UDID" screenshot shots/$tab.png
+          done
+      - name: Publish screenshots to ci-shots branch
+        run: |
+          cd shots
+          git init -q -b ci-shots
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add . && git commit -qm "Screenshots ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" ci-shots

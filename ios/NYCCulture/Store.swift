@@ -35,6 +35,13 @@ final class Store {
 
     init() {
         scope = Scope(rawValue: UserDefaults.standard.string(forKey: "scope") ?? "") ?? .all
+        // Launch argument used by the screenshot build: -initialTab map
+        switch UserDefaults.standard.string(forKey: "initialTab") {
+        case "exhibitions": tab = .exhibitions
+        case "map": tab = .map
+        case "institutions": tab = .institutions
+        default: break
+        }
         loadSaved()
     }
 
