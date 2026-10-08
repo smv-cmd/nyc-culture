@@ -20,47 +20,73 @@ struct MapTabView: View {
     ]
 
     var body: some View {
-        let counts = store.countsBySource()
-        let visible = store.sources.filter { store.sourceVisible($0) && Coords.of($0.id) != nil }
-            .sorted { (counts[$0.id] ?? 0) < (counts[$1.id] ?? 0) }
         NavigationStack {
-            Map(position: $position) {
-                ForEach(visible) { s in
-                        Annotation(s.name, coordinate: Coords.of(s.id)!, anchor: .center) {
-                            PinView(color: Theme.borough(s.borough), count: counts[s.id] ?? 0,
-                                    selected: selected?.id == s.id)
-                                .onTapGesture { selected = s }
-                                .accessibilityLabel("\(s.name), \(counts[s.id] ?? 0) listings")
-                                .accessibilityAddTraits(.isButton)
-                        }
+            mapLayer
+                .safeAreaInset(edge: .top) { regionBar }
+                .navigationTitle("Map")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) { ScopeMenu() }
+                    ToolbarItem(placement: .topBarTrailing) { FilterMenu() }
                 }
-                UserAnnotation()
-            }
-            .mapStyle(.standard(elevation: .flat, pointsOfInterest: .excludingAll))
-            .annotationTitles(.hidden)
-            .mapControls {
-                MapUserLocationButton()
-                MapCompass()
-            }
-            .safeAreaInset(edge: .top) { regionBar }
-            .navigationTitle("Map")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) { ScopeMenu() }
-                ToolbarItem(placement: .topBarTrailing) { FilterMenu() }
-            }
-            .toolbarBackground(Theme.bg, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .onAppear {
-                if locationManager.authorizationStatus == .notDetermined {
-                    locationManager.requestWhenInUseAuthorization()
+                .toolbarBackground(Theme.bg, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .onAppear(perform: askForLocation)
+                .sheet(item: $selected) { s in
+                    InstitutionSheet(source: s)
+                        .presentationDetents([.medium, .large])
+                        .presentationDragIndicator(.visible)
+                }
+        }
+    }
+
+    private struct PinData: Identifiable {
+        let source: Source
+        let coordinate: CLLocationCoordinate2D
+        let count: Int
+        var id: String { source.id }
+    }
+
+    private var pins: [PinData] {
+        let counts: [String: Int] = store.countsBySource()
+        var out: [PinData] = []
+        for s in store.sources where store.sourceVisible(s) {
+            guard let c = Coords.of(s.id) else { continue }
+            out.append(PinData(source: s, coordinate: c, count: counts[s.id] ?? 0))
+        }
+        return out.sorted { $0.count < $1.count }
+    }
+
+    private var mapLayer: some View {
+        let data: [PinData] = pins
+        return Map(position: $position) {
+            ForEach(data) { p in
+                Annotation(p.source.name, coordinate: p.coordinate, anchor: .center) {
+                    pinButton(p)
                 }
             }
-            .sheet(item: $selected) { s in
-                InstitutionSheet(source: s)
-                    .presentationDetents([.medium, .large])
-                    .presentationDragIndicator(.visible)
-            }
+            UserAnnotation()
+        }
+        .mapStyle(.standard(elevation: .flat, pointsOfInterest: .excludingAll))
+        .annotationTitles(.hidden)
+        .mapControls {
+            MapUserLocationButton()
+            MapCompass()
+        }
+    }
+
+    private func pinButton(_ p: PinData) -> some View {
+        let color: Color = Theme.borough(p.source.borough)
+        let isSelected: Bool = selected?.id == p.source.id
+        return PinView(color: color, count: p.count, selected: isSelected)
+            .onTapGesture { selected = p.source }
+            .accessibilityLabel("\(p.source.name), \(p.count) listings")
+            .accessibilityAddTraits(.isButton)
+    }
+
+    private func askForLocation() {
+        if locationManager.authorizationStatus == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
         }
     }
 
