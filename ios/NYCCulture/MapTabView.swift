@@ -6,6 +6,7 @@ struct MapTabView: View {
     @Environment(Store.self) private var store
     @State private var position: MapCameraPosition = .region(Self.regions["All"]!)
     @State private var selected: Source?
+    @State private var locationManager = CLLocationManager()
 
     static let regions: [String: MKCoordinateRegion] = [
         "All": MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.712, longitude: -73.93),
@@ -30,6 +31,11 @@ struct MapTabView: View {
                 }
                 .toolbarBackground(Theme.bg, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
+                .onAppear {
+                    if locationManager.authorizationStatus == .notDetermined {
+                        locationManager.requestWhenInUseAuthorization()
+                    }
+                }
                 .sheet(item: $selected) { s in
                     InstitutionSheet(source: s)
                         .presentationDetents([.medium, .large])
