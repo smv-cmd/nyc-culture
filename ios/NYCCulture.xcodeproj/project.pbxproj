@@ -1,0 +1,378 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C9118FEF8341F64EBD4D1DA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960E5106D826CAEAC249AE03 /* Store.swift */; };
+		45238D4BA6E387E8130663C5 /* AgendaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F87F7BF76C2D2E510B19E6B /* AgendaView.swift */; };
+		64BDB02F59F9FF1E992928C6 /* Coords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F98D363CB82D143C2D86C95 /* Coords.swift */; };
+		66ED14387CF39CED2AFFFA29 /* ExhibitionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A4F6C62DD438F4D981F3C4 /* ExhibitionsView.swift */; };
+		7A093D8E4AEF35D29491ED10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7408A20361C7466837BB08 /* Assets.xcassets */; };
+		8F96AA2FDF186B87D7F51BED /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AE12016AD84F04AC6EC084F /* data.json */; };
+		C753E9E5AE38A0712539D1CA /* MapTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C311D4E781A0D72EB36FEA0C /* MapTabView.swift */; };
+		DCF5A824187D6F9DDBF9096C /* InstitutionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF9C075CA46F26B6E7238D /* InstitutionsView.swift */; };
+		E9BB9EC17C2149C0730A8951 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13DD07802C9D3F1056567F3 /* Dates.swift */; };
+		ED25F76050CC0F328AF2903A /* NYCCultureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1528EFDCB8BC5AF9AB2DD4E8 /* NYCCultureApp.swift */; };
+		F1D49A70D240BE93ACA1105D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC1F4319721DF102347D32 /* Theme.swift */; };
+		FA956E19B9A08FD9E104FBA4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28298357EFAD41DD107F2DE /* Models.swift */; };
+		FD11850861A4D36FE679E67B /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579E281871C19CD0CA455B5A /* Components.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0AE12016AD84F04AC6EC084F /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		1528EFDCB8BC5AF9AB2DD4E8 /* NYCCultureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCCultureApp.swift; sourceTree = "<group>"; };
+		26A4F6C62DD438F4D981F3C4 /* ExhibitionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitionsView.swift; sourceTree = "<group>"; };
+		2EBC1F4319721DF102347D32 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		2F87F7BF76C2D2E510B19E6B /* AgendaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaView.swift; sourceTree = "<group>"; };
+		3E7408A20361C7466837BB08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45EC2AB0E12FD28FBA438BAD /* NYCCulture.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NYCCulture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		579E281871C19CD0CA455B5A /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		960E5106D826CAEAC249AE03 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9F98D363CB82D143C2D86C95 /* Coords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coords.swift; sourceTree = "<group>"; };
+		B8AF9C075CA46F26B6E7238D /* InstitutionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionsView.swift; sourceTree = "<group>"; };
+		C311D4E781A0D72EB36FEA0C /* MapTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTabView.swift; sourceTree = "<group>"; };
+		D28298357EFAD41DD107F2DE /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		E13DD07802C9D3F1056567F3 /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		267948A0449B94EF25C0FB76 = {
+			isa = PBXGroup;
+			children = (
+				F97F8F419E4BF118CAC89AA5 /* NYCCulture */,
+				72A14ACE4479976B963B5DD1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BA3F72B944F6F392A7B6362 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0AE12016AD84F04AC6EC084F /* data.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		72A14ACE4479976B963B5DD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45EC2AB0E12FD28FBA438BAD /* NYCCulture.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F97F8F419E4BF118CAC89AA5 /* NYCCulture */ = {
+			isa = PBXGroup;
+			children = (
+				2F87F7BF76C2D2E510B19E6B /* AgendaView.swift */,
+				3E7408A20361C7466837BB08 /* Assets.xcassets */,
+				579E281871C19CD0CA455B5A /* Components.swift */,
+				9F98D363CB82D143C2D86C95 /* Coords.swift */,
+				E13DD07802C9D3F1056567F3 /* Dates.swift */,
+				26A4F6C62DD438F4D981F3C4 /* ExhibitionsView.swift */,
+				B8AF9C075CA46F26B6E7238D /* InstitutionsView.swift */,
+				C311D4E781A0D72EB36FEA0C /* MapTabView.swift */,
+				D28298357EFAD41DD107F2DE /* Models.swift */,
+				1528EFDCB8BC5AF9AB2DD4E8 /* NYCCultureApp.swift */,
+				960E5106D826CAEAC249AE03 /* Store.swift */,
+				2EBC1F4319721DF102347D32 /* Theme.swift */,
+				4BA3F72B944F6F392A7B6362 /* Resources */,
+			);
+			path = NYCCulture;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84BC3E6AE20DC1779CB578D2 /* NYCCulture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86905AC1576394D44CF9C4E3 /* Build configuration list for PBXNativeTarget "NYCCulture" */;
+			buildPhases = (
+				669F87317884ED7D7BA6E064 /* Sources */,
+				E57CBD9B4AE543CBA475C9BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NYCCulture;
+			packageProductDependencies = (
+			);
+			productName = NYCCulture;
+			productReference = 45EC2AB0E12FD28FBA438BAD /* NYCCulture.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9481D579A7E75BECA28B5432 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					84BC3E6AE20DC1779CB578D2 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4A111EC302C59FF4149118E9 /* Build configuration list for PBXProject "NYCCulture" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 267948A0449B94EF25C0FB76;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 72A14ACE4479976B963B5DD1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84BC3E6AE20DC1779CB578D2 /* NYCCulture */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E57CBD9B4AE543CBA475C9BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A093D8E4AEF35D29491ED10 /* Assets.xcassets in Resources */,
+				8F96AA2FDF186B87D7F51BED /* data.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		669F87317884ED7D7BA6E064 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45238D4BA6E387E8130663C5 /* AgendaView.swift in Sources */,
+				FD11850861A4D36FE679E67B /* Components.swift in Sources */,
+				64BDB02F59F9FF1E992928C6 /* Coords.swift in Sources */,
+				E9BB9EC17C2149C0730A8951 /* Dates.swift in Sources */,
+				66ED14387CF39CED2AFFFA29 /* ExhibitionsView.swift in Sources */,
+				DCF5A824187D6F9DDBF9096C /* InstitutionsView.swift in Sources */,
+				C753E9E5AE38A0712539D1CA /* MapTabView.swift in Sources */,
+				FA956E19B9A08FD9E104FBA4 /* Models.swift in Sources */,
+				ED25F76050CC0F328AF2903A /* NYCCultureApp.swift in Sources */,
+				0C9118FEF8341F64EBD4D1DA /* Store.swift in Sources */,
+				F1D49A70D240BE93ACA1105D /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		25761965E752DB3A2535C029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "NYC Culture";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Shows where you are on the map so you can find nearby exhibitions and events.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smvcmd.nycculture;
+				PRODUCT_NAME = NYCCulture;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		277873B7F7CD7856BD8A087B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A5C568D040A43A11A8F6C90F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C23252222BB525329D42B5C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "NYC Culture";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Shows where you are on the map so you can find nearby exhibitions and events.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smvcmd.nycculture;
+				PRODUCT_NAME = NYCCulture;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A111EC302C59FF4149118E9 /* Build configuration list for PBXProject "NYCCulture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277873B7F7CD7856BD8A087B /* Debug */,
+				A5C568D040A43A11A8F6C90F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		86905AC1576394D44CF9C4E3 /* Build configuration list for PBXNativeTarget "NYCCulture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25761965E752DB3A2535C029 /* Debug */,
+				C23252222BB525329D42B5C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9481D579A7E75BECA28B5432 /* Project object */;
+}
