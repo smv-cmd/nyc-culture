@@ -64,11 +64,11 @@ struct MapTabView: View {
                 Annotation(p.source.name, coordinate: p.coordinate, anchor: .center) {
                     pinButton(p)
                 }
+                .annotationTitles(.hidden)
             }
             UserAnnotation()
         }
         .mapStyle(.standard(elevation: .flat, pointsOfInterest: .excludingAll))
-        .annotationTitles(.hidden)
         .mapControls {
             MapUserLocationButton()
             MapCompass()
