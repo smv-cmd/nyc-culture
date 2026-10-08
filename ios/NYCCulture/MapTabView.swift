@@ -6,11 +6,10 @@ struct MapTabView: View {
     @Environment(Store.self) private var store
     @State private var position: MapCameraPosition = .region(Self.regions["All"]!)
     @State private var selected: Source?
-    @State private var locationManager = CLLocationManager()
 
     static let regions: [String: MKCoordinateRegion] = [
-        "All": MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.727, longitude: -73.925),
-                                  span: MKCoordinateSpan(latitudeDelta: 0.25, longitudeDelta: 0.22)),
+        "All": MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.712, longitude: -73.93),
+                                  span: MKCoordinateSpan(latitudeDelta: 0.21, longitudeDelta: 0.19)),
         "Manhattan": MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.765, longitude: -73.975),
                                         span: MKCoordinateSpan(latitudeDelta: 0.13, longitudeDelta: 0.09)),
         "Brooklyn": MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.672, longitude: -73.965),
@@ -31,7 +30,6 @@ struct MapTabView: View {
                 }
                 .toolbarBackground(Theme.bg, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
-                .onAppear(perform: askForLocation)
                 .sheet(item: $selected) { s in
                     InstitutionSheet(source: s)
                         .presentationDetents([.medium, .large])
@@ -84,11 +82,6 @@ struct MapTabView: View {
             .accessibilityAddTraits(.isButton)
     }
 
-    private func askForLocation() {
-        if locationManager.authorizationStatus == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
-        }
-    }
 
     private var regionBar: some View {
         ScrollView(.horizontal, showsIndicators: false) {
